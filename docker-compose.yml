@@ -4,7 +4,7 @@ services:
   app:
     #build: .
     image: jaccon/pydockr
-    container_name: rotary-api-sender
+    container_name: api-flask-pydockr 
     ports:
       - "8422:8080"
     networks:
@@ -19,5 +19,3 @@ networks:
    ipam:
       config:
        - subnet: 10.0.0.1/24
-      #- subnet: 10.0.0.2/16
-        #gateway: 10.0.0.1
