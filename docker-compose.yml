@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  app:
+    #build: .
+    image: jaccon/pydockr
+    container_name: rotary-api-sender
+    ports:
+      - "8422:8080"
+    networks:
+      - hosting
+    volumes:
+      - ./src:/app
+    restart: always
+    command: bash -c "python /app/app.py"
+
+networks:
+  hosting:
+   ipam:
+      config:
+       - subnet: 10.0.0.1/24
+      #- subnet: 10.0.0.2/16
+        #gateway: 10.0.0.1
